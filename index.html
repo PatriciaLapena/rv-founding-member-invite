@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>You're Invited to Reclaimed Vitality</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #faf7f4 0%, #f5ebe3 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .flyer {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(139, 115, 85, 0.15);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .flyer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #c9a66b 0%, #d4b896 50%, #c9a66b 100%);
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 40px 30px;
+            background: linear-gradient(180deg, #faf7f4 0%, #ffffff 100%);
+        }
+        
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: #5a4a3a;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .tagline {
+            font-size: 13px;
+            color: #c9a66b;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        .content {
+            padding: 0 50px 40px;
+        }
+        
+        .exclusive-badge {
+            background: linear-gradient(135deg, #c9a66b 0%, #d4b896 100%);
+            color: white;
+            display: inline-block;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(201, 166, 107, 0.3);
+        }
+        
+        .headline-section {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        
+        .headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            color: #5a4a3a;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .subheadline {
+            font-size: 16px;
+            color: #8b7355;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .signature-photo {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .signature-photo img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(90, 74, 58, 0.15);
+        }
+        
+        .signature-photo .caption {
+            font-size: 14px;
+            color: #8b7355;
+            margin-top: 12px;
+            font-style: italic;
+        }
+        
+        .welcome-text {
+            background: #faf7f4;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 4px solid #c9a66b;
+        }
+        
+        .welcome-text p {
+            font-size: 15px;
+            color: #5a4a3a;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+        
+        .assessment-section {
+            background: linear-gradient(135deg, #f8f5f0 0%, #f0ebe3 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 2px solid #e8ddd0;
+        }
+        
+        .assessment-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: #5a4a3a;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .assessment-text {
+            font-size: 15px;
+            color: #5a4a3a;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        .assessment-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a66b 0%, #d4b896 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(201, 166, 107, 0.4);
+            transition: transform 0.3s;
+        }
+        
+        .assessment-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .offer-box {
+            background: linear-gradient(135deg, #e8f4f0 0%, #f0f7f4 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 2px solid #7a9b76;
+            position: relative;
+        }
+        
+        .offer-box::before {
+            content: '🌸';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 0 15px;
+            font-size: 20px;
+        }
+        
+        .free-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            color: #7a9b76;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .free-subtitle {
+            font-size: 18px;
+            color: #5a4a3a;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .offer-details {
+            font-size: 14px;
+            color: #5a4a3a;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .then-price {
+            font-size: 15px;
+            color: #8b7355;
+            font-weight: 500;
+        }
+        
+        .limited-time {
+            background: #fff8f0;
+            border-radius: 15px;
+            padding: 20px 25px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #5a4a3a;
+            font-weight: 500;
+            text-align: center;
+            border: 1px dashed #c9a66b;
+        }
+        
+        .benefits-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #5a4a3a;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+        
+        .benefits-list li {
+            font-size: 14px;
+            color: #5a4a3a;
+            padding: 15px 20px;
+            padding-left: 45px;
+            position: relative;
+            background: #faf7f4;
+            border-radius: 12px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        
+        .benefits-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            color: #c9a66b;
+            font-size: 16px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #5a4a3a 0%, #7a6a5a 100%);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            color: white;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(90, 74, 58, 0.2);
+        }
+        
+        .cta-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .cta-steps {
+            font-size: 14px;
+            margin-bottom: 25px;
+            line-height: 2;
+            font-weight: 300;
+        }
+        
+        .coupon-box {
+            background: linear-gradient(135deg, #c9a66b 0%, #d4b896 100%);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            display: inline-block;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 15px rgba(201, 166, 107, 0.4);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 40px;
+            background: #faf7f4;
+            border-top: 1px solid #e8ddd0;
+        }
+        
+        .footer-text {
+            font-size: 14px;
+            color: #8b7355;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        .community-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: #5a4a3a;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .date-note {
+            font-size: 12px;
+            color: #a09080;
+            margin-top: 15px;
+        }
+        
+        .decorative-line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c9a66b, transparent);
+            margin: 20px auto;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .flyer {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+        <div class="header">
+            <div class="logo-text">Reclaimed Vitality</div>
+            <div class="tagline">Your Best Life Starts Now</div>
+        </div>
+        
+        <div class="content">
+            <div style="text-align: center;">
+                <div class="exclusive-badge">✨ Exclusive Invitation</div>
+            </div>
+            
+            <div class="headline-section">
+                <h1 class="headline">You're Invited to Join<br>Something Extraordinary</h1>
+                <p class="subheadline">A warm, welcoming community of women 60+ reclaiming their vitality, health, and purpose</p>
+            </div>
+            
+            <div class="decorative-line"></div>
+            
+            <div class="signature-photo">
+                <img src="MEDIA:./founders-team.jpg" alt="The Reclaimed Vitality Founders - Patricia, Joanne & Sue">
+                <p class="caption">Patricia, Joanne & Sue — Founders of Reclaimed Vitality</p>
+            </div>
+            
+            <div class="welcome-text">
+                <p>A dear friend of ours has invited you to be part of something truly special. Reclaimed Vitality is a community where women like us come together to support each other, share our journeys, and discover that our best years are still ahead of us. We'd love for you to join us.</p>
+            </div>
+            
+            <div class="assessment-section">
+                <h2 class="assessment-title">Begin Your Journey Here</h2>
+                <p class="assessment-text">Start with your complimentary Vitality Assessment. In just 5 minutes, discover where you stand in the 7 key areas of your life — Mindset, Nutrition, Movement, Body, Purpose, Passion, and Possibilities. Receive your personalized report and see how Reclaimed Vitality can help you thrive.</p>
+                <a href="https://reclaimedvitalityassessment.scoreapp.com" class="assessment-btn">Take Your Free Assessment →</a>
+            </div>
+            
+            <div class="offer-box">
+                <div class="free-text">FREE Membership</div>
+                <div class="decorative-line" style="width: 40px; margin: 15px auto;"></div>
+                <p class="free-subtitle">Join May 1-14 at No Cost</p>
+                <p class="offer-details">Become a Legacy Member and start your journey completely free</p>
+                <p class="then-price">Starting May 15th: $5/month</p>
+            </div>
+            
+            <div class="limited-time">
+                🌸 This special invitation is only available from May 1st through May 14th. Don't miss this opportunity to join our founding circle of women ready to embrace vitality, purpose, and joy together.
+            </div>
+            
+            <div class="benefits-section">
+                <h2 class="section-title">What Awaits You as a Legacy Member</h2>
+                <ul class="benefits-list">
+                    <li>A supportive sisterhood of like-minded women on the same journey</li>
+                    <li>The complete 28-Day Reclaimed Vitality Reset program</li>
+                    <li>Monthly inspiring podcasts with expert guest speakers</li>
+                    <li>Live Q&A sessions where your questions are heard and answered</li>
+                    <li>Nutrition Corner with delicious recipes and cooking demos</li>
+                    <li>Curated resources — books, downloads, and wisdom shared</li>
+                    <li>Daily inspiration and genuine friendships that uplift</li>
+                    <li><strong>Your membership — FREE through May 14th</strong></li>
+                </ul>
+            </div>
+            
+            <div class="cta-section">
+                <div class="cta-title">Ready to Reclaim Your Vitality?</div>
+                <div class="cta-steps">
+                    1. Take your free assessment<br>
+                    2. Click "Join the Community" at the end<br>
+                    3. Enter your special code at checkout<br>
+                    4. Welcome to the family — FREE!
+                </div>
+                <div class="coupon-box">CODE: 12345</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">"Join us in creating a beautiful movement of women who refuse to believe that our best days are behind us — who are ready to live with vitality, purpose, and joy."</div>
+            <div class="community-name">With love,<br>The Reclaimed Vitality Community</div>
+            <div class="date-note">Free Legacy Member offer valid May 1-14, 2026 only. Membership $5/month starting May 15th.</div>
+        </div>
+    </div>
+</body>
+</html>
